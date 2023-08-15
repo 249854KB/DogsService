@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Polibuda\\PSOiR\\PSOiR\\DogsService\\ForumsService.csproj": {}
+    "c:\\Polibuda\\PSOiR\\PSOiR\\DogsService\\DogsService.csproj": {}
   },
   "projects": {
-    "c:\\Polibuda\\PSOiR\\PSOiR\\DogsService\\ForumsService.csproj": {
+    "c:\\Polibuda\\PSOiR\\PSOiR\\DogsService\\DogsService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Polibuda\\PSOiR\\PSOiR\\DogsService\\ForumsService.csproj",
-        "projectName": "ForumsService",
-        "projectPath": "c:\\Polibuda\\PSOiR\\PSOiR\\DogsService\\ForumsService.csproj",
+        "projectUniqueName": "c:\\Polibuda\\PSOiR\\PSOiR\\DogsService\\DogsService.csproj",
+        "projectName": "DogsService",
+        "projectPath": "c:\\Polibuda\\PSOiR\\PSOiR\\DogsService\\DogsService.csproj",
         "packagesPath": "C:\\Users\\bortn\\.nuget\\packages\\",
         "outputPath": "c:\\Polibuda\\PSOiR\\PSOiR\\DogsService\\obj\\",
         "projectStyle": "PackageReference",

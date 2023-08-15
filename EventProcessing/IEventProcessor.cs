@@ -1,4 +1,4 @@
-namespace ForumsService.EventProcessing
+namespace DogsService.EventProcessing
 {
     public interface IEventProcessor
     {

@@ -2,7 +2,7 @@
   "version": 2,
   "dgSpecHash": "FXKDiuqcYTYr8Njg0HDBg4LwPOE/9va+30/CGP724taQHqYQ/Qry91H21e9PuopS4xqcn5elGg6Ym7SRhLXg7Q==",
   "success": true,
-  "projectFilePath": "c:\\Polibuda\\PSOiR\\PSOiR\\DogsService\\ForumsService.csproj",
+  "projectFilePath": "c:\\Polibuda\\PSOiR\\PSOiR\\DogsService\\DogsService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bortn\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\bortn\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

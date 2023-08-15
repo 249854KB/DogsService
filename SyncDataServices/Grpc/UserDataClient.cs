@@ -1,12 +1,12 @@
 using System;
 using System.Collections.Generic;
 using AutoMapper;
-using ForumsService.Models;
+using DogsService.Models;
 using Grpc.Net.Client;
 using Microsoft.Extensions.Configuration;
 using UserService;
 
-namespace ForumsService.SyncDataServices.Grpc
+namespace DogsService.SyncDataServices.Grpc
 {
     public class UserDataClient : IUserDataClient
     {

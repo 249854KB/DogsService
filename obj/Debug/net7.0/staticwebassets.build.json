@@ -1,8 +1,8 @@
 {
   "Version": 1,
   "Hash": "nXZZXfDvyCsfQFSwtxFG2+dxrUnpeUPdka0aTq2sCro=",
-  "Source": "ForumsService",
-  "BasePath": "_content/ForumsService",
+  "Source": "DogsService",
+  "BasePath": "_content/DogsService",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],

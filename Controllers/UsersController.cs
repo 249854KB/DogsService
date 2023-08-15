@@ -1,20 +1,20 @@
 using AutoMapper;
-using ForumsService.Data;
-using ForumsService.Dtos;
-using ForumsService.Models;
+using DogsService.Data;
+using DogsService.Dtos;
+using DogsService.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 
-namespace ForumsService.Controllers
+namespace DogsService.Controllers
 {
-    [Route("api/f/[controller]")]
+    [Route("api/dogs/[controller]")]
     [ApiController]
     public class UsersController: ControllerBase
     {
-        private readonly IForumRepo _repository;
+        private readonly IDogRepo _repository;
         private readonly IMapper _mapper;
 
-        public UsersController(IForumRepo repository, IMapper mapper)
+        public UsersController(IDogRepo repository, IMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;
@@ -22,7 +22,7 @@ namespace ForumsService.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<UserReadDto>> GetUsers()
         {
-            Console.WriteLine("-->> Getting User From Forum service");
+            Console.WriteLine("-->> Getting User From Dog service");
             var userItems = _repository.GetAllUsers();
             return Ok(_mapper.Map<IEnumerable<UserReadDto>>(userItems));
         }
@@ -30,7 +30,7 @@ namespace ForumsService.Controllers
         public ActionResult TestInboundConnection()
         {
             Console.WriteLine("--> Inboud POST # Command Service");
-            return Ok("Inmbound test ok for forums controller");
+            return Ok("Inmbound test ok for dogs controller");
         }
         //Https and grcp is synchronius
     }

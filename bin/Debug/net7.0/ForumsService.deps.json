@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v7.0": {
-      "ForumsService/1.0.0": {
+      "DogsService/1.0.0": {
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
           "Google.Protobuf": "3.23.3",
@@ -20,7 +20,7 @@
           "Swashbuckle.AspNetCore": "6.4.0"
         },
         "runtime": {
-          "ForumsService.dll": {}
+          "DogsService.dll": {}
         }
       },
       "AutoMapper/12.0.1": {
@@ -312,7 +312,7 @@
     }
   },
   "libraries": {
-    "ForumsService/1.0.0": {
+    "DogsService/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

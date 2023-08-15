@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "ForumsService": {
+    "DogsService": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,

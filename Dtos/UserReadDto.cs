@@ -1,4 +1,4 @@
-namespace ForumsService.Dtos
+namespace DogsService.Dtos
 {
     public class UserReadDto
     {

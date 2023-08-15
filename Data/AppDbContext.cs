@@ -1,7 +1,7 @@
-using ForumsService.Models;
+using DogsService.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace ForumsService.Data
+namespace DogsService.Data
 {
     public class AppDbContext : DbContext
     {
@@ -10,20 +10,20 @@ namespace ForumsService.Data
 
         }
         public DbSet<User> Users{ get; set; }
-        public DbSet<Forum> Forums{ get; set;}
+        public DbSet<Dog> Dogs{ get; set;}
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder
             .Entity<User>()
-            .HasMany(u => u.Forums)
+            .HasMany(u => u.Dogs)
             .WithOne(u=> u.User!)
             .HasForeignKey(u=>u.UserId);
 
             modelBuilder
-            .Entity<Forum>()
+            .Entity<Dog>()
             .HasOne(u=>u.User)
-            .WithMany(u=>u.Forums)
+            .WithMany(u=>u.Dogs)
             .HasForeignKey(u=>u.UserId);
         }
     }

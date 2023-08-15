@@ -1,24 +1,24 @@
 using AutoMapper;
-using ForumsService.Models;
-using ForumsService.Dtos;
+using DogsService.Models;
+using DogsService.Dtos;
 using UserService;
 
-namespace ForumsService.Profiles
+namespace DogsService.Profiles
 {
-    public class ForumsProfile : Profile
+    public class DogsProfile : Profile
     {
-        public ForumsProfile()
+        public DogsProfile()
         {
             //Source -> target
             CreateMap<User, UserReadDto>();
-            CreateMap<ForumCreateDto, Forum>();
-            CreateMap<Forum, ForumReadDto>();
+            CreateMap<DogCreateDto, Dog>();
+            CreateMap<Dog, DogReadDto>();
             CreateMap<UserPublishedDto, User>()
                 .ForMember(destination =>destination.ExternalID, opt => opt.MapFrom(source => source.Id));
             CreateMap<GrpcUserModel, User>()
             .ForMember(destination => destination.ExternalID, opt => opt.MapFrom(src => src.UserId))
             .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Name))
-            .ForMember(dest => dest.Forums, opt =>opt.Ignore());
+            .ForMember(dest => dest.Dogs, opt =>opt.Ignore());
 
 
         }

@@ -1,4 +1,4 @@
-namespace ForumsService
+namespace DogsService
 {
     public class UserPublishedDto
     {

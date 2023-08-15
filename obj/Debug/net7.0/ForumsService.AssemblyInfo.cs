@@ -10,12 +10,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("ForumsService")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("DogsService")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("ForumsService")]
-[assembly: System.Reflection.AssemblyTitleAttribute("ForumsService")]
+[assembly: System.Reflection.AssemblyProductAttribute("DogsService")]
+[assembly: System.Reflection.AssemblyTitleAttribute("DogsService")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Wygenerowane przez klasę WriteCodeFragment programu MSBuild.

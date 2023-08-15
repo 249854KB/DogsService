@@ -1,12 +1,12 @@
 using System;
 using System.Text.Json;
 using AutoMapper;
-using ForumsService.Data;
-using ForumsService.Dtos;
-using ForumsService.Models;
+using DogsService.Data;
+using DogsService.Dtos;
+using DogsService.Models;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace ForumsService.EventProcessing
+namespace DogsService.EventProcessing
 {
     public class EventProcessor : IEventProcessor
     {
@@ -54,7 +54,7 @@ namespace ForumsService.EventProcessing
         {
             using (var scope = _scopeFactory.CreateScope())
             {
-                var repo = scope.ServiceProvider.GetRequiredService<IForumRepo>();
+                var repo = scope.ServiceProvider.GetRequiredService<IDogRepo>();
                 
                 var userPublishedDto = JsonSerializer.Deserialize<UserPublishedDto>(userPublishedMessage);
 

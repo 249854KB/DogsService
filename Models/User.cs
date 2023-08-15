@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace ForumsService.Models
+namespace DogsService.Models
 {
     public class User
     {
@@ -12,6 +12,6 @@ namespace ForumsService.Models
         [Required]
         public string Name { get; set; }
 
-        public ICollection<Forum> Forums { get; set; } = new List<Forum>();
+        public ICollection<Dog> Dogs { get; set; } = new List<Dog>();
     }
 }

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using ForumsService.Models;
+using DogsService.Models;
 
-namespace ForumsService.SyncDataServices.Grpc
+namespace DogsService.SyncDataServices.Grpc
 {
     public interface IUserDataClient
     {

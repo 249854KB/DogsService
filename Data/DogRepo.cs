@@ -1,23 +1,23 @@
-using ForumsService.Models;
+using DogsService.Models;
 
-namespace ForumsService.Data
+namespace DogsService.Data
 {
-    public class ForumRepo : IForumRepo
+    public class DogRepo : IDogRepo
     {
         private readonly AppDbContext _context;
 
-        public ForumRepo(AppDbContext context)
+        public DogRepo(AppDbContext context)
         {
             _context = context;
         }
-        public void CreateForum(int userId, Forum forum)
+        public void CreateDog(int userId, Dog dog)
         {
-            if(forum == null)
+            if(dog == null)
             {
-                throw new ArgumentNullException(nameof(forum));
+                throw new ArgumentNullException(nameof(dog));
             }
-            forum.UserId = userId;
-            _context.Forums.Add(forum);
+            dog.UserId = userId;
+            _context.Dogs.Add(dog);
 
         }
 
@@ -40,16 +40,16 @@ namespace ForumsService.Data
             return _context.Users.ToList();
         }
 
-        public Forum GetForum(int userId, int forumId)
+        public Dog GetDog(int userId, int dogId)
         {
-            return _context.Forums
-                .Where(f => f.UserId == userId && f.Id == forumId).FirstOrDefault();
+            return _context.Dogs
+                .Where(f => f.UserId == userId && f.Id == dogId).FirstOrDefault();
         }
 
-        public IEnumerable<Forum> GetForumsForUser(int userId)
+        public IEnumerable<Dog> GetDogsForUser(int userId)
         {
-            return _context.Forums.Where(f=> f.UserId == userId)
-            .OrderBy(f=>f.User.Name);
+            return _context.Dogs.Where(d=> d.UserId == userId)
+            .OrderBy(d=>d.User.Name);
         }
 
         public bool SaveChanges()
