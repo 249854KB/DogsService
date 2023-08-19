@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DogsService.Controllers
 {
-    [Route("api/users/{userId}/[controller]")]
+    [Route("api/d/users/{userId}/[controller]")]
     [ApiController]
     public class DogsController : ControllerBase
     {

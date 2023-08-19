@@ -7,7 +7,7 @@ using System;
 
 namespace DogsService.Controllers
 {
-    [Route("api/dogs/[controller]")]
+    [Route("api/d/[controller]")]
     [ApiController]
     public class UsersController: ControllerBase
     {

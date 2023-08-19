@@ -9,7 +9,8 @@ message GetAllRequest {}
 message GrpcUserModel {
     int32 userId = 1;
     string Name = 2;
-    string Dog = 3;
+    int32 RankInSystem = 3;
+    int32 NumberOfDogs  = 4;
 }
 
 message UserResponse {

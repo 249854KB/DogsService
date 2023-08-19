@@ -43,7 +43,7 @@ namespace DogsService.Data
         public Dog GetDog(int userId, int dogId)
         {
             return _context.Dogs
-                .Where(f => f.UserId == userId && f.Id == dogId).FirstOrDefault();
+                .Where(d => d.UserId == userId && d.Id == dogId).FirstOrDefault();
         }
 
         public IEnumerable<Dog> GetDogsForUser(int userId)
