@@ -6,6 +6,7 @@ using DogsService.AsyncDataServices;
 using DogsService.Data;
 using DogsService.EventProcessing;
 using DogsService.SyncDataServices.Grpc;
+using DogsService.SyncDataServices.Http;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -35,8 +36,11 @@ namespace DogsService
             optionsAction.UseInMemoryDatabase("InMemnam"));
             services.AddScoped<IDogRepo, DogRepo>(); //IF they ask for IUser Repo we give them user repo
             services.AddControllers();
+            services.AddHttpClient<IPhotoDataClient, HttpPhotoDataClient>();
             services.AddHostedService<MessageBusSubscriber>();
+            services.AddSingleton<IMessageBusClient, MessageBusClient>();
             services.AddSingleton<IEventProcessor, EventProcessor>(); //Singletone ->> all time alongside 
+            services.AddGrpc();
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddScoped<IUserDataClient, UserDataClient>();  //Registering it
             services.AddSwaggerGen(c =>
@@ -44,7 +48,7 @@ namespace DogsService
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "DogsService", Version = "v1" });
             });
 
-     
+        Console.WriteLine($"--> Photo Service Endpoint is {Configuration["PhotoService"]}");
 
         }
 
@@ -67,6 +71,11 @@ namespace DogsService
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                 endpoints.MapGrpcService<GrpcDogService>();
+                endpoints.MapGet("/protocols/dogs.proto", async context =>
+                {
+                    await context.Response.WriteAsync(File.ReadAllText("Protocols/dogs.proto"));
+                });
                 
             });
             PrepDb.PrepPopulation(app);

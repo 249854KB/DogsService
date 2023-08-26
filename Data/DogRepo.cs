@@ -35,6 +35,11 @@ namespace DogsService.Data
              return _context.Users.Any(u => u.ExternalID == externalUserId);
         }
 
+         public IEnumerable<Dog> GetAllDogs()
+        {
+             return _context.Dogs
+            .OrderBy(d=>d.User.Name);
+        }
         public IEnumerable<User> GetAllUsers()
         {
             return _context.Users.ToList();

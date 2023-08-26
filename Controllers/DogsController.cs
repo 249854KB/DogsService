@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using AutoMapper;
+using DogsService.AsyncDataServices;
 using DogsService.Data;
 using DogsService.Dtos;
 using DogsService.Models;
@@ -14,11 +15,12 @@ namespace DogsService.Controllers
     {
         private readonly IDogRepo _repository;
         private readonly IMapper _mapper;
-
-        public DogsController(IDogRepo repository, IMapper mapper)
+        private readonly IMessageBusClient _messageBusClient;
+        public DogsController(IDogRepo repository, IMapper mapper, IMessageBusClient messageBusClient)
         {
             _repository = repository;
             _mapper = mapper;
+             _messageBusClient = messageBusClient;
         }
 
         [HttpGet]
@@ -73,6 +75,16 @@ namespace DogsService.Controllers
 
             var dogReadDto = _mapper.Map<DogReadDto>(dog);
 
+            try
+            {
+                var dogPublishedDto = _mapper.Map<DogPublishedDto>(dogReadDto);
+                dogPublishedDto.Event = "Dog_Published";
+                _messageBusClient.PublishNewDog(dogPublishedDto);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"--> Asynchro Error: {ex.Message}");
+            }
             return CreatedAtRoute(nameof(GetDogForUser),
                 new {userId = userId, dogId = dogReadDto.Id}, dogReadDto);
         }

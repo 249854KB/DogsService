@@ -19,6 +19,11 @@ namespace DogsService.Profiles
             .ForMember(destination => destination.ExternalID, opt => opt.MapFrom(src => src.UserId))
             .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Name))
             .ForMember(dest => dest.Dogs, opt =>opt.Ignore());
+            CreateMap<Dog,GrpcDogModel>()
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(src=>src.Id))
+                .ForMember(dest => dest.DateOfBirth,opt => opt.MapFrom(src=>src.DateOfBirth))
+                .ForMember(dest => dest.Race, opt => opt.MapFrom(src=>src.Race))
+                .ForMember(dest => dest.UserId, opt => opt.MapFrom(src=>src.UserId));;
 
 
         }

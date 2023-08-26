@@ -12,6 +12,7 @@ namespace DogsService.Data
         bool ExternalUserExists(int userId);
 
         IEnumerable<Dog> GetDogsForUser(int userId);
+        IEnumerable<Dog> GetAllDogs();
         Dog GetDog(int userId, int dogId);
         void CreateDog(int userId, Dog dog);
     }
