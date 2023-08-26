@@ -13,6 +13,7 @@ namespace DogsService.Profiles
             CreateMap<User, UserReadDto>();
             CreateMap<DogCreateDto, Dog>();
             CreateMap<Dog, DogReadDto>();
+            CreateMap<DogCreateDto,DogPublishedDto>();
             CreateMap<UserPublishedDto, User>()
                 .ForMember(destination =>destination.ExternalID, opt => opt.MapFrom(source => source.Id));
             CreateMap<GrpcUserModel, User>()
