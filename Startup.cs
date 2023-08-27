@@ -58,9 +58,10 @@ namespace DogsService
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "DogsService v1"));
             }
+                app.UseSwagger(c=>
+                c.RouteTemplate = "api/d/swagger/{documentName}/swagger.json");
+            
 
             //app.UseHttpsRedirection();
 
